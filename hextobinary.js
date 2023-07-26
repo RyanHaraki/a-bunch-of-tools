@@ -17,11 +17,12 @@ const hexToBinaryMap = {
   F: "1111",
 };
 
-const hexToBinary = (binaryNumber) => {
+// Take the hex value, split the 0x, add the binary values of each hex digit to a string
+const hexToBinary = (hexValue) => {
   let binaryString = "";
-  let stringToProcess = binaryNumber.split("0x")[1].split("");
+  let stringToProcess = hexValue.split("0x")[1].split("");
 
-  if (binaryNumber.split("0x")[0] !== "") {
+  if (hexValue.split("0x")[0] !== "") {
     return "ERROR: Invalid Hexadecimal format. Please use the format 0x{0-F}+ to denote hexadecimal numbers.";
   }
 
