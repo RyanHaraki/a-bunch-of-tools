@@ -7,7 +7,7 @@ const signedBinaryToDecimal = (binaryString) => {
   let binaryArray = binaryString.split("").map((number) => parseInt(number));
 
   // If the binary integer starts with a 1, do two's complement to convert it
-  if (binaryArray[0] === 1) return twoComplement(binaryArray); // 1010
+  if (binaryArray[0] === 1) return twoComplement(binaryArray);
 
   binaryArray = binaryArray.reverse(); // reverse to operate as if going from left to right by hand
 
@@ -23,15 +23,14 @@ const signedBinaryToDecimal = (binaryString) => {
 };
 
 const twoComplement = (binaryArray) => {
-  // 1010
   let finalInt = 0;
   let exponent = 0;
   let carry = 1; // initial carry as 1 since we are adding 1
 
   // flip the 0s and 1s (same as reversing TBH)
-  const flippedBinary = binaryArray.map((num) => (num == 1 ? 0 : 1)); // 0101 -> +1 -> 0110
+  const flippedBinary = binaryArray.map((num) => (num == 1 ? 0 : 1)); 
 
-  binaryReversed = flippedBinary.reverse(); // reverse to operate as if going from left to right by hand / 1010
+  binaryReversed = flippedBinary.reverse(); // reverse to operate as if going from left to right by hand
 
   // add 1 to binary string
   for (let i = 0; i < flippedBinary.length; i++) {
